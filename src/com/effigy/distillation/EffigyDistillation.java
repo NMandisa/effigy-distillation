@@ -83,12 +83,9 @@ public class EffigyDistillation {
                     graphics2D.setComposite(AlphaComposite.Src);
         
 
-                    graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
-                    RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-                    graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING,
-                    RenderingHints.VALUE_RENDER_QUALITY);
-                    graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                    RenderingHints.VALUE_ANTIALIAS_ON);
+                    graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+                    graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                    graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
                    
                     System.out.println("The File Name Input is "+imageFile.getName()); 
                     System.out.println("System get :"+System.getProperty("user.dir")+"/resource/images/"+imgFolder[i].toString()+"/"+imageFile.getName());
