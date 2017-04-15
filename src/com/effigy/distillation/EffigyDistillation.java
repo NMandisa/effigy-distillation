@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
  *
  * @author Noxolo.Mkhungo
  */
-public class ImageResizerHybrisPlugin {
+public class EffigyDistillation {
 
     /**
      * @param args the command line arguments
