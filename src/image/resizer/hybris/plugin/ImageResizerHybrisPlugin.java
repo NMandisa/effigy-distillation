@@ -91,7 +91,8 @@ public class ImageResizerHybrisPlugin {
                     RenderingHints.VALUE_ANTIALIAS_ON);
                    
                     System.out.println("The File Name Input is "+imageFile.getName()); 
-                    outputImageFile = new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\"+imgFolder[i].toString()+"\\"+imageFile.getName()); //output file path
+                    System.out.println("System get :"+System.getProperty("user.dir")+"/resource/images/"+imgFolder[i].toString()+"/"+imageFile.getName());
+                    outputImageFile = new File(System.getProperty("user.dir")+"/resource/images/"+imgFolder[i].toString()+"/"+imageFile.getName()); //output file path
                     ImageIO.write(resizedImage, "jpg", outputImageFile);
                     System.out.println("Writing complete.");
                    
