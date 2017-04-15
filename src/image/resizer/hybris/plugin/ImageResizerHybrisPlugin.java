@@ -11,6 +11,8 @@ import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.imageio.ImageIO;
 
 
@@ -40,10 +42,15 @@ public class ImageResizerHybrisPlugin {
                 BufferedImage originalImage = null;
                 File imageFile = null;
                 File outputImageFile = null;
+                File path = null;
                 //BufferedImage originalImage = ImageIO.read(new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\1200Wx1200H\\EOH_087_1200.jpg"));
-                imageFile =new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\1200Wx1200H\\EOH_087_1200.jpg"); // Image File Path
+
+                imageFile =new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\1200Wx1200H\\EOH_087_1200.jpg"); // Image File Path          
                 originalImage = ImageIO.read(imageFile);
                 int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
+                
+                
+                
                 System.out.println("Reading complete.");
                 //Boolean flag = validateImgDimension(originalImage);
                 //validateImage = originalImage;
@@ -59,7 +66,7 @@ public class ImageResizerHybrisPlugin {
                     {System.out.println("Sorry the image is not a 1200 in height Please make sure it a 1200Wx1200H image");ImgDimensiionFlag =false;}//Set The Image Dimension to false if image doesn't the height criteria
                 else {System.out.println("Please Upload a 1200 x 1200 image."); ImgDimensiionFlag =false;}//Set The Image Dimension to false if image doesn't the criteria
                 
-            if(ImgDimensiionFlag == true){  //Once we have established that the image is the correct dimension lets the batch writing begin 
+                if(ImgDimensiionFlag == true){  //Once we have established that the image is the correct dimension lets the batch writing begin 
                 System.out.println("Image Was Verified");
                 for (int i=0; i<imgFolder.length; i++) {
                 imgFolder[i].toString();
@@ -82,14 +89,21 @@ public class ImageResizerHybrisPlugin {
                     g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
                    
-                    System.out.println("The File Name Input is"+imageFile.getName()); 
-                    outputImageFile = new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\"+imgFolder[i].toString()+"\\"+imageFile.getName()+".jpg"); //output file path
+                    System.out.println("The File Name Input is "+imageFile.getName()); 
+                    outputImageFile = new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\"+imgFolder[i].toString()+"\\"+imageFile.getName()); //output file path
                     ImageIO.write(resizedImage, "jpg", outputImageFile);
                     System.out.println("Writing complete.");
+                   
+                    
                  }
                 //BufferedImage resizeImageHintPng = resizeImageWithHint(originalImage, type);
 		//ImageIO.write(resizeImageHintPng, "png", new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\515Wx515H\\GF01_FAB.jpg"));
+            
+            
+          
             }
+            
+            
             
                 
                 
@@ -114,6 +128,8 @@ public class ImageResizerHybrisPlugin {
        
 
     }
+    
+
     
 //    private static Boolean validateImgDimension(BufferedImage validateImage) throws IOException{
 //        //validateImage = originalImage;
