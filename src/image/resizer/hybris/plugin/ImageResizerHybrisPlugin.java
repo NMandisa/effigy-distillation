@@ -43,11 +43,12 @@ public class ImageResizerHybrisPlugin {
                 File imageFile = null;
                 File outputImageFile = null;
                 File path = null;
-                //BufferedImage originalImage = ImageIO.read(new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\1200Wx1200H\\EOH_087_1200.jpg"));
-
-                imageFile =new File("C:\\Users\\noxolo.mkhungo\\Documents\\NetBeansProjects\\Image-Resizer-Hybris-Plugin\\src\\images\\1200Wx1200H\\EOH_087_1200.jpg"); // Image File Path          
+       
+                System.out.println("System get :"+System.getProperty("user.dir")+"/resource/images/1200Wx1200H");
+                imageFile =new File(System.getProperty("user.dir")+"/resource/images/1200Wx1200H/GF01_FAB.jpg"); // Image File Path          
                 originalImage = ImageIO.read(imageFile);
                 int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
+              
                 
                 
                 
@@ -74,19 +75,19 @@ public class ImageResizerHybrisPlugin {
                     
                     //Specifying the output Dimension Dynamically.
                     BufferedImage resizedImage = new BufferedImage((int)imgDimensions[i].getWidth(), (int)imgDimensions[i].getHeight(), type);
-                    Graphics2D g = resizedImage.createGraphics();
+                    Graphics2D graphics2D = resizedImage.createGraphics();
         
         
-                    g.drawImage(originalImage, 0, 0, (int)imgDimensions[i].getWidth(), (int)imgDimensions[i].getHeight(), null);
-                    g.dispose();
-                    g.setComposite(AlphaComposite.Src);
+                    graphics2D.drawImage(originalImage, 0, 0, (int)imgDimensions[i].getWidth(), (int)imgDimensions[i].getHeight(), null);
+                    graphics2D.dispose();
+                    graphics2D.setComposite(AlphaComposite.Src);
         
 
-                    g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+                    graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
                     RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-                    g.setRenderingHint(RenderingHints.KEY_RENDERING,
+                    graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING,
                     RenderingHints.VALUE_RENDER_QUALITY);
-                    g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                    graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
                    
                     System.out.println("The File Name Input is "+imageFile.getName()); 
