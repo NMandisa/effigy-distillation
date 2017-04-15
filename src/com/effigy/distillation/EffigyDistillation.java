@@ -44,7 +44,7 @@ public class EffigyDistillation {
                 File outputImageFile = null;
                 File path = null;
        
-                System.out.println("System get :"+System.getProperty("user.dir")+"/resource/images/1200Wx1200H");
+                System.out.print("System get ------------>"+System.getProperty("user.dir")+"/resource/images/1200Wx1200H");
                 imageFile =new File(System.getProperty("user.dir")+"/resource/images/1200Wx1200H/GF01_FAB.jpg"); // Image File Path          
                 originalImage = ImageIO.read(imageFile);
                 int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
@@ -52,15 +52,15 @@ public class EffigyDistillation {
                 
                 
                 
-                System.out.println("Reading complete.");
+                System.out.print("Reading complete. ------------>");
                 //Boolean flag = validateImgDimension(originalImage);
                 //validateImage = originalImage;
                 int imgWidth = originalImage.getWidth();///Get Original  Image Width
-                System.out.println("The Width of the image is :"+ imgWidth);
+                System.out.println("The Width of the image is ========> :"+ imgWidth);
                 int imgHeight = originalImage.getHeight();//Get Original Image Height
-                System.out.println("The Height of the image is :"+ imgHeight);
+                System.out.print("The Height of the image is ======> :"+ imgHeight);
                 if(imgWidth == 1200 && imgHeight == 1200)//  Validating the image is the correct dimension size 1200x1200
-                    { System.out.println("Verified Image Size Lets do this."); ImgDimensiionFlag =true;} //Set The Image Dimension to true if image does the criteria
+                    { System.out.print("Verified Image Size Lets do this. ======>"); ImgDimensiionFlag =true;} //Set The Image Dimension to true if image does the criteria
                 else if(imgWidth != 1200)//  Validating the image is the correct width size 1200x1200
                     {System.out.println("Sorry the image is not a 1200 width Please make sure it a 1200Wx1200H image");ImgDimensiionFlag =false;} //Set The Image Dimension to false if image doesn't the Width criteria
                 else if(imgHeight != 1200)//  Validating the image is the correct height size 1200x1200
@@ -71,7 +71,7 @@ public class EffigyDistillation {
                 System.out.println("Image Was Verified");
                 for (int i=0; i<imgFolder.length; i++) {
                 imgFolder[i].toString();
-                    System.out.println("Folder #"+(i+1)+" "+imgFolder[i].toString());
+                    System.out.print("Folder #"+(i+1)+" "+imgFolder[i].toString());
                     
                     //Specifying the output Dimension Dynamically.
                     BufferedImage resizedImage = new BufferedImage((int)imgDimensions[i].getWidth(), (int)imgDimensions[i].getHeight(), type);
