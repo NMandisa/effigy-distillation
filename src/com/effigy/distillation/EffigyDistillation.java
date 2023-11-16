@@ -37,8 +37,8 @@ public class EffigyDistillation {
                 File outputImageFile = null;
                 File path = null;
        
-                System.out.print("System get ------------>"+System.getProperty("user.dir")+"/resource/images/1200Wx1200H");
-                imageFile =new File(System.getProperty("user.dir")+"/resource/images/1200Wx1200H/GF01_FAB.jpg"); // Image File Path          
+                System.out.print("System get ------------>"+System.getProperty("user.dir")+"/resources/images/1200Wx1200H");
+                imageFile =new File(System.getProperty("user.dir")+"/resources/images/1200Wx1200H/GF01_FAB.jpg"); // Image File Path          
                 originalImage = ImageIO.read(imageFile);
                 int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
               
@@ -81,8 +81,8 @@ public class EffigyDistillation {
                     graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
                    
                     System.out.println("The File Name Input is "+imageFile.getName()); 
-                    System.out.println("System get :"+System.getProperty("user.dir")+"/resource/images/"+imgFolder[i].toString()+"/"+imageFile.getName());
-                    outputImageFile = new File(System.getProperty("user.dir")+"/resource/images/"+imgFolder[i].toString()+"/"+imageFile.getName()); //output file path
+                    System.out.println("System get :"+System.getProperty("user.dir")+"/resources/images/"+imgFolder[i].toString()+"/"+imageFile.getName());
+                    outputImageFile = new File(System.getProperty("user.dir")+"/resources/images/"+imgFolder[i].toString()+"/"+imageFile.getName()); //output file path
                     ImageIO.write(resizedImage, "jpg", outputImageFile);
                     System.out.println("Writing complete.");
                    
